@@ -1,0 +1,133 @@
+<!DOCTYPE html>	
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="Assignment2.css" />
+		<script src="Assignment2.js" type="text/javascript"></script>
+		<title>Breakout by Yang Hu</title>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<ul id="navigation">
+		  <li class="tab" id="conid" associated-content="context">Overview</li>
+		  <li class="tab" id="taskid" associated-content="demo">Demonstration</li>		
+		  <li class="tab" id="proid" associated-content="math">Algorithms</li>
+		  <li class="tab" id="docid" associated-content="doc">Documentation</li>	
+		  <li class="tab" id="artid" associated-content="post">Post Mortem</li>
+		  <li class="tab" id="desid" associated-content="play">Play</li>
+		  <li class="tab" id="conclusionid" associated-content="contact">Contact Us</li>
+		</ul>
+		<!-- context -->
+		<div class="tabcontent" id="context">
+		
+			<h2 id="milestoneinformation">Project Overview</h2>
+			<!-- Group Info -->
+			<fieldset>
+				<legend>Basic Information</legend>
+				<ul id="members">
+					<li class="team"><span class="teamName">Project</span>: Platformer</li>
+					<li class="team"><span class="teamName">Author</span>: JiangChuan Wang, Yang Hu, Hang Zhou, Shang Lyu </li>
+					<li class="team"><span class="teamName">Institution</span>: Northeastern University</li>
+					<li class="team"><span class="teamName">Class</span>: CS5850 - Building Game Engine</li>
+					<li class="team"><span class="teamName">Instructor</span>: Mike Shah</li>
+				</ul>
+			</fieldset>
+			<!-- context -->
+			<h2>Game Introduction</h2>
+			<video width="610" class="center" controls autoplay>
+			    <source src="video/game.mov" type="video/mp4">
+			</video>
+
+			<p>This project is a simple 2D platformer game that was built with SDL2. Besides, we developed a game engine which consists of a sprite editor and a tilemap editor.</p>
+			<p>We also implemented a component pattern game engine which allows you to add sprites, texts, animation, gameobjects and tilemaps.</p>
+			<h3>Rules:</h3>
+			<ol id="update">
+				<li><span class="teamName">Title Screen</span>: When the game start, use up arrow or downarrow to select a game scene.</li>
+				<li><span class="teamName">Movement</span>: Press A or D to move left/right, space to jump.</li>
+				<li><span class="teamName">Switch Mode</span>: Use Q on your keyboard to quit the game or back to the menu.</li>
+				<li><span class="teamName">Edit and Play</span>: Player can open the editor and create customized tilemaps. You can save your tilemap to the local file or load it to the game.</li>
+			</ol>
+			<!--  -->
+		</div>
+		<!-- demo -->
+		<div class="tabcontent" id="demo">
+			<h2>Game Demonstration</h2>
+			<h3>Game play</h3>
+			<p>Basic gameplay.</p>
+			<video width="610" class="center" controls autoplay>
+			    <source src="video/game.mov" type="video/mp4">
+			</video>
+			<p>Level editor.</p>
+			<video width="610" class="center" controls autoplay>
+			    <source src="video/editor.mov" type="video/mp4">
+			</video>
+
+			<h3>Screen shots</h3>
+			<p>Title screen</p>
+			<a href="img/title.png"><img src="img/title.png" alt="Screenshot of the game" class="center" width=700></a>
+			<p>Gameplay</p>
+			<a href="img/game.png"><img src="img/game.png" alt="Screenshot of the game" class="center" width=700></a>
+			<p>Editor</p>
+			<a href="img/editor.png"><img src="img/editor.png" alt="Screenshot of the game" class="center" width=700></a>
+		</div>
+		<!-- play -->
+		<div class="tabcontent" id="play">
+			<h2>Game build and executable</h2>
+			 <a href="https://github.com/CottageLord/Platform_SDL">GitHub Repository
+      		</a>
+		</div>
+		<!-- prototype -->
+		<div class="tabcontent" id="math">
+			<h2>Enemy AI</h2>
+			<p>We implemented a basic enemy AI.</p>
+			<a href="img/enemyai.png"><img src="img/enemyai.png" alt="Screenshot of the game" class="center" width=700></a>
+			<p>The enemy changes between walk and rest states based on fixed time schedule. The player detection runs with highest priority, and will change the enemy state to attack when the player is visible and is close.</p>
+			<p>We implemented a simple <a href="../docs/html/class_tile_map.html#a077c0ba26962448731714e0ccb93b5bb">Raycast()</a> function for detecting player.</p>
+			<video width="610" class="center" controls autoplay>
+			    <source src="video/enemyai.mp4" type="video/mp4">
+			</video>
+			<h2>Collision check</h2>
+			<p>The collision check method is adapted from the Separating Axis Theorem (SAT) in <a target="_blank" href="https://austinmorlan.com/posts/pong_clone/">Austin Morlan 's tutorial</a>.</p>
+			<a href="img/collision_example_03.png"><img src="img/collision_example_03.png" alt="Screenshot of the game" class="center" width=700></a>
+		</div>
+
+		<div class="tabcontent" id="doc">
+			<h2>Project documentation</h2>
+			 <a href="../docs/html/index.html">Documentation</a>
+		</div>
+
+		<div class="tabcontent" id="post">
+			<h2>Possible improvements with 8 extra weeks</h2>
+			<h5>Better graphics:</h5>
+			<p>The sprites we found still have some visible flaws (the little black edges in some tiles). We could improve this very fastly.<span class="teamName">(1 day)</span></p>
+			<p>Add <span class="teamName">more sprites</span>, the enemies and characters should have more varietyies. <span class="teamName">(1 day)</span></p>
+
+			<h5>Better editor:</h5>
+			<p><span class="teamName">A level file manager </span> that could browse and select between multiple level files. <span class="teamName">(2 days)</span></p>
+			<p><span class="teamName">Better data separation. </span>The editor should save different tiles (collidable, uncollidable and anemy objects) into separate files, for easier coding (i.e when generating colliders). <span class="teamName">(1 day)</span></p>
+			<p>Add different <span class="teamName">backgrounds </span> <span class="teamName">(1 day)</span></p>
+
+
+			<h5>More mechanics:</h5>
+			<p><span class="teamName">A real combat system </span> that allows player to wield a weapon.<span class="teamName">(1 week)</span></p>
+			<p><span class="teamName"> Battle reward </span> mechanics. The sprite sheet we use already provides many potion-like items, and we could use these as dropped rewards from the enemies. <span class="teamName">3 days</span></p>
+
+			<h5>More levels:</h5>
+			<p>Add <span class="teamName">more levels</span>, even chapters, make a new game process manager and UI for all level displays <span class="teamName">(1 to 2 week)</span></p>
+			<p>Add <span class="teamName">narratives (1 week)</span>
+
+			<h5>Refine build:</h5>
+			<p>Make a <span class="teamName"> better title screen and pause menu</span> with clickable buttons <span class="teamName">(1 week)</span></p>
+
+		</div>
+		
+		<div class="tabcontent" id="contact">
+			<h4>Email:</h4>
+			<span class="teamName">Jiangchuan Wang</span><p>wang.jiangch@northeastern.edu</p>
+			<span class="teamName">Yang Hu</span><p>hu.ya@northeastern.edu</p>
+			<span class="teamName">Zhou Hang</span><p>zhou.han@northeastern.edu</p>
+			<span class="teamName">Shang Lyu</span><p>lyu.sha@northeastern.edu</p>
+		</div>
+	</body>
+</html>
